@@ -40,8 +40,8 @@ namespace Snipping_OCR
             RegisterHotKey();
 
             var hk = ConfigurationManager.AppSettings["Hotkey"];
-            ShowBaloonMessage($"Double-click the systray icon or press {hk} to start a new snip...", "Snipping OCR");
-            mnuSnip.Text = $"Snip {hk}";
+            ShowBaloonMessage($"双击图标或按快捷键 {hk} 选择区域", "Snipping Barcode");
+            mnuSnip.Text = $"框选 {hk}";
             Hide();
         }
 
@@ -205,10 +205,10 @@ namespace Snipping_OCR
             if (readerResult != null)
             {
                 Clipboard.SetText(readerResult.Text);
-                ShowBaloonMessage("Copied: " + readerResult.Text.Substring(0, 12) + "...", "Snipping Barcode");
+                ShowBaloonMessage(readerResult.Text.Substring(0, Math.Min(readerResult.Text.Length, 16)) + "...", "已复制");
             } else
             {
-                ShowBaloonMessage("No barcode found", "Snipping Barcode");
+                ShowBaloonMessage("无法识别Barcode，请调整选择区域", "无法识别");
             }
             
         }

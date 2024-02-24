@@ -45,10 +45,10 @@
             // notifyIcon
             // 
             this.notifyIcon.BalloonTipText = "Hola";
-            this.notifyIcon.BalloonTipTitle = "OCR";
+            this.notifyIcon.BalloonTipTitle = "Snipping Barcode";
             this.notifyIcon.ContextMenuStrip = this.notifyMenu;
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "OCR";
+            this.notifyIcon.Text = "Snipping Barcode";
             this.notifyIcon.Visible = true;
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
@@ -74,6 +74,7 @@
             "Tesseract"});
             this.mnuEngine.Name = "mnuEngine";
             this.mnuEngine.Size = new System.Drawing.Size(121, 23);
+            this.mnuEngine.Visible = false;
             // 
             // mnuLanguageCombo
             // 
@@ -84,13 +85,14 @@
             this.mnuLanguageCombo.Name = "mnuLanguageCombo";
             this.mnuLanguageCombo.Size = new System.Drawing.Size(121, 23);
             this.mnuLanguageCombo.Click += new System.EventHandler(this.toolStripComboBox1_Click);
+            this.mnuLanguageCombo.Visible = false;
             // 
             // mnuSnip
             // 
             this.mnuSnip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.mnuSnip.Name = "mnuSnip";
             this.mnuSnip.Size = new System.Drawing.Size(190, 22);
-            this.mnuSnip.Text = "Snip (SHIFT+WIN+C)";
+            this.mnuSnip.Text = "框选 (SHIFT+WIN+C)";
             this.mnuSnip.Click += new System.EventHandler(this.mnuSnip_Click);
             // 
             // mnuClipboardNow
@@ -100,6 +102,7 @@
             this.mnuClipboardNow.Size = new System.Drawing.Size(190, 22);
             this.mnuClipboardNow.Text = "Process Clipboard";
             this.mnuClipboardNow.Click += new System.EventHandler(this.mnuClipboardNow_Click);
+            this.mnuClipboardNow.Visible = false;
             // 
             // mnuMonitorClipboard
             // 
@@ -107,6 +110,7 @@
             this.mnuMonitorClipboard.Size = new System.Drawing.Size(190, 22);
             this.mnuMonitorClipboard.Text = "Monitor clipboard";
             this.mnuMonitorClipboard.Click += new System.EventHandler(this.mnuMonitorClipboard_Click);
+            this.mnuMonitorClipboard.Visible = false;
             // 
             // exitToolStripMenuItem
             // 
@@ -117,7 +121,7 @@
             // 
             this.mnuExit.Name = "mnuExit";
             this.mnuExit.Size = new System.Drawing.Size(190, 22);
-            this.mnuExit.Text = "Exit";
+            this.mnuExit.Text = "退出";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
             // MainForm
