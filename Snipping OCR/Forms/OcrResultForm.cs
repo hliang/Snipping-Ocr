@@ -16,21 +16,21 @@ namespace Snipping_OCR
             InitializeComponent();
         }
 
-        public static void ShowOcr(OcrResult result)
-        {
-            var form = new OcrResultForm();
-            if (!result.Success)
-            {
-                form.txtLog.Text = "ERROR: " + result.Error;
-                form.txtLog.ForeColor = Color.Red;
-            }
-            else
-            {
-                form.txtLog.Text = result.Text.Replace("\n", Environment.NewLine);
-                form.txtLog.ForeColor = SystemColors.WindowText;
-            }
-            form.txtLog.Select(0, 0);
-            form.Show();
-        }
+        //public static void ShowOcr(OcrResult result)
+        //{
+        //    var form = new OcrResultForm();
+        //    if (!result.Success)
+        //    {
+        //        form.txtLog.Text = "ERROR: " + result.Error;
+        //        form.txtLog.ForeColor = Color.Red;
+        //    }
+        //    else
+        //    {
+        //        form.txtLog.Text = result.Text.Replace("\n", Environment.NewLine);
+        //        form.txtLog.ForeColor = SystemColors.WindowText;
+        //    }
+        //    form.txtLog.Select(0, 0);
+        //    form.Show();
+        //}
     }
 }

@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Snipping_OCR</RootNamespace>
-    <AssemblyName>Snipping OCR</AssemblyName>
+    <AssemblyName>Snipping Barcode</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -91,9 +91,6 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -108,10 +105,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tesseract, Version=3.0.2.0, Culture=neutral, PublicKeyToken=ebeb3d86bef60cbe, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tesseract.3.0.2.0\lib\net40-client\Tesseract.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>..\packages\ZXing.Net.0.16.9\lib\net48\zxing.dll</HintPath>
     </Reference>
@@ -135,12 +128,6 @@
       <DependentUpon>OcrResultForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HotkeyHelper\HotKey.cs" />
-    <Compile Include="OcrHelper\IOcr.cs" />
-    <Compile Include="OcrHelper\OcrTesseract.cs" />
-    <Compile Include="OcrHelper\OcrFactory.cs" />
-    <Compile Include="OcrHelper\OcrResult.cs" />
-    <Compile Include="OcrHelper\OcrSpaceOcr.cs" />
-    <Compile Include="OcrHelper\OcrSpace\MODELS.cs" />
     <Compile Include="SnippingTool\DeviceInfo.cs" />
     <Compile Include="SnippingTool\ScreenHelper.cs" />
     <Compile Include="SnippingTool\SnippingTool.cs">
@@ -151,18 +138,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="x64\liblept172.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x64\libtesseract304.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x86\liblept172.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x86\libtesseract304.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
