@@ -74,9 +74,9 @@ namespace Snipping_OCR
                 {
                     g.CopyFromScreen(left, top, 0, 0, bmp.Size);
                 }
-                _forms[i] = new SnippingTool(bmp, left, top, hRes, vRes);
+                _forms[i] = new SnippingTool(bmp, left + 200, top+ 200, 400, 400);
                 _forms[i].Show();
-            }
+                }
         }
         #endregion
 

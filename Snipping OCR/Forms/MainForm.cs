@@ -10,7 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using Tesseract;
+using ZXing;
+// using Tesseract;
 
 namespace Snipping_OCR
 {
@@ -195,6 +196,23 @@ namespace Snipping_OCR
             OcrResultForm.ShowOcr(result);
         }
 
+        private void ReadBarcodeInImage(Image image)
+        {
+            IBarcodeReader reader = new BarcodeReader();
+            var readerResult = reader.Decode(new Bitmap(image));
+            notifyIcon.Visible = true; // hide balloon tip (if any)
+            // OcrResultForm.ShowOcr(result);
+            if (readerResult != null)
+            {
+                Clipboard.SetText(readerResult.Text);
+                ShowBaloonMessage("Copied: " + readerResult.Text.Substring(0, 12) + "...", "Snipping Barcode");
+            } else
+            {
+                ShowBaloonMessage("No barcode found", "Snipping Barcode");
+            }
+            
+        }
+
         private void mnuExit_Click(object sender, EventArgs e)
         {
             Exit();
@@ -284,8 +302,9 @@ namespace Snipping_OCR
             }
             else
             {
-                ShowBaloonMessage("Processing image...", "OCR");
-                ProcessOcrImage(SnippingTool.Image);
+                // ShowBaloonMessage("Processing image...", "Snipping Barcode");
+                //ProcessOcrImage(SnippingTool.Image);
+                ReadBarcodeInImage(SnippingTool.Image);
             }
         }
     }
